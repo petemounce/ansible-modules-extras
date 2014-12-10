@@ -82,6 +82,14 @@ Else
 {
     $showlog = $null
 }
+If ($params.debug)
+{
+    $debug = $params.debug | ConvertTo-Bool
+}
+Else
+{
+    $debug = $false
+}
 
 If ($params.state)
 {
@@ -189,6 +197,10 @@ if ($source -eq "chocolatey")
 elseif (($source -eq "windowsfeatures") -or ($source -eq "webpi") -or ($source -eq "ruby"))
 {
     $expression += " -source $source"
+}
+If ($debug -eq $true)
+{
+    $expression += " -debug"
 }
 
 Set-Attr $result "chocolatey command" $expression

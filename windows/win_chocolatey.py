@@ -80,6 +80,15 @@ options:
       - windowsfeatures
     default: chocolatey
     aliases: []
+  debug:
+    description:
+      - Run with debug
+    required: false
+    choices:
+      - yes
+      - no
+    default: no
+    aliases: []
   logPath:
     description:
       - Where to log command output to
