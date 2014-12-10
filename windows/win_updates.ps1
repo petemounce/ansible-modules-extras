@@ -58,10 +58,10 @@ set-attr $result "updates_category" $category
 $to_install = get-wulist -category $category
 $installed = @()
 foreach ($u in $to_install) {
-  $kb = $u.KBArticleIDs
+  $kb = "KB$($u.KBArticleIDs)"
   write-log "Installing $kb - $($u.Title)"
   $install_result = get-wuinstall -KBArticleID $u.KBArticleIDs -acceptall -ignorereboot
-  Set-Attr $result "updates_installed_KB$kb" $u.Title
+  Set-Attr $result "updates_installed_$kb" $u.Title
   $installed += $kb
 }
 write-log "Installed: $($installed.count)"
