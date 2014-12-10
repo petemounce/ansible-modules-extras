@@ -40,6 +40,11 @@ options:
       - security
       - (anything that is a valid update category)
     default: critical
+  logPath:
+    description:
+      - Where to log command output to, for debugging
+    required: false
+    default: c:\\ansible-playbook.log
     aliases: []
 author: Peter Mounce
 '''
