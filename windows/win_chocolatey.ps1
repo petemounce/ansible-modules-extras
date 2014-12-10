@@ -30,9 +30,10 @@ function Write-Log
 
   $date = get-date -format 'yyyy-MM-dd hh:mm:ss.zz'
 
-  Write-Host "$date | $message"
+  $msg = "$date | chocolatey | $message"
+  Write-Host $msg
 
-  Out-File -InputObject "$date $message" -FilePath $global:LoggingFile -Append
+  Out-File -InputObject $msg -FilePath $global:LoggingFile -Append
 }
 
 $params = Parse-Args $args;
