@@ -92,7 +92,7 @@ options:
   logPath:
     description:
       - Where to log command output to
-    require: false
+    required: false
     default: c:\\ansible-playbook.log
     aliases: []
 author: Trond Hindenes, Peter Mounce
