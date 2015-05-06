@@ -24,7 +24,7 @@
 DOCUMENTATION = '''
 ---
 module: win_ec2config
-version_added: "1.9"
+version_added: "2.0"
 short_description: Configure and invoke AWS ec2config
 description:
   - ec2config is a windows service by AWS to allow access to advanced features for windows EC2 instances.
@@ -39,7 +39,6 @@ options:
       - Disabled
     required: false
     default: Enabled
-    aliases: []
   Ec2SetPassword:
     description:
       - Enabled: generate a random password for Administrator on each instance launch
@@ -49,7 +48,6 @@ options:
       - Disabled
     required: false
     default: Enabled
-    aliases: []
   sysprep:
     description:
       - Run sysprep and shutdown the instance so an AMI can be created from it
@@ -60,7 +58,6 @@ options:
       - no
     required: false
     default: no
-    aliases: []
 author: Peter Mounce
 '''
 
